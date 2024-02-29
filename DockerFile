@@ -1,0 +1,11 @@
+FROM node
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+# EXPOSE 7000 not sure which port is set in my app
+
+CMD [ "node", "tag-all-server.js" ]
