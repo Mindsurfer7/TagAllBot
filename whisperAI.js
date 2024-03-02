@@ -4,10 +4,8 @@ config();
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-console.log(OPENAI_API_KEY);
-
 const whisper = new OpenAI({
-  apiKey: "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",
+  apiKey: OPENAI_API_KEY,
 });
 
 export const transcribeVoice = async (file) => {

@@ -3,6 +3,7 @@ import Ffmpeg from "fluent-ffmpeg";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import installer from "@ffmpeg-installer/ffmpeg";
+import { removeFile } from "./helpers.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -21,6 +22,7 @@ export class oggConverter {
           .output(outputPath)
           .on("end", () => {
             resolve(outputPath);
+            removeFile(input);
           })
           .on("error", (err) => {
             rej(err.message);

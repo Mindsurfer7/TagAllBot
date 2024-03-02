@@ -1,21 +1,4 @@
-// "rewrites": [
-// {
-// "source": "**",
-// "function": "app"
-// }
-// ]
-FROM node:16-alpine
+# Что может бот?
 
-WORKDIR /app
-
-# Копируем зависимости приложения
-
-COPY package\*.json ./
-
-COPY . .
-
-RUN npm install
-
-EXPOSE 3000
-
-CMD [ "node", "tag-all-server.js" ]
+1. Расшифровывать голосовые сообщения
+2. Тегать всех, кто является админом группы.
